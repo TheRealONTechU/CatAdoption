@@ -76,7 +76,7 @@
                 </select>
             </div>
             <div>
-                <label for="FLV Tested">FIV Tested:</label>
+                <label for="FLV Tested">FLV Tested:</label>
                 <select name="FLV Tested">
         
                     <option> </option>
@@ -131,28 +131,69 @@
                                 
                 </select>
             </div>
-
+            <div>
+                <label for="Primary Colour">Primary Colour:</label>
+                <input type="text" id="Primary Colour" name="Primary Colour" />
+            </div>
+            <div>
+                <label for="Secondary Colour">Secondary Colour:</label>
+                <input type="text" id="Secondary Colour" name="Secondary Colour" />
+            </div>
+            <div>
+                <label for="Colour Pattern">Colour Pattern:</label>
+                <input type="text" id="Colour Pattern" name="Colour Pattern" />
+            </div>
+            <div>
+                <label for="Microchip Number">Microchip Number:</label>
+                <input type="text" id="Microchip Number" name="Microchip Number" />
+            </div>
+            <div>
+                <label for="Microchip Issuer">Microchip Issuer:</label>
+                <input type="text" id="Microchip Issuer" name="Microchip Issuer" />
+            </div>
 
             <h2>Intake Details</h2>
             <div>
-                <label for="name">Name:</label>
+                <label for="Record Owner">Name:</label>
                 <input type="text" id="name" name="user_name" />
-              <div>
-              <div>
-                <label for="mail">E-mail:</label>
-                <input type="email" id="mail" name="user_email" />
-              </div>
-              <div>
-                <label for="msg">Message:</label>
-                <textarea id="msg" name="user_message"></textarea>
-              </div>
+            <div>
+            <div>
+                <label for="intake Type">Intake Type:</label>
+                <select name="intake Type">
+                    <option></option>
+                    <option>Born in Care</option>
+                    <option>DOA</option>
+                    <option>Coalition Partner</option>
+                    <option>Emergency Response</option>
+                    <option>Help for Cats</option>
+                    <option>KWCC</option>
+                    <option>Non-Coalition partner</option>
+                                            
+                </select>
+            </div>
+            <div>
+                <label for="Jurisdiction">Jurisdiction:</label>
+                <input type="text" id="Jurisdiction" name="Jurisdiction" />
+            </div>
+            <div>
+                <label for="Transfer Reason">Message:</label>
+                <textarea id="Transfer Reason" name="Transfer Reason"></textarea>
+            </div>
+            <div>
+                <label for="Review Date">Review Date:</label>
+                <input type="date" id="Review Date" name="Review Date" />
+            <div>
+            <div>
+                <label for="Foster Location">Foster Location:</label>
+                <textarea id="Foster Location" name="TFoster Location"></textarea>
+            </div>
 
             <h2>Upload Documents</h2>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+        
         </form>
     </div>    
 </body>
