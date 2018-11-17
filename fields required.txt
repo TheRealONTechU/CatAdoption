@@ -2,38 +2,39 @@
 Fields:
 Proposal Date
 Name
-Age
+Age - null
 Sex
 Description
-S/N
-Shelter Name
-Shelter ID
+S/N(boolean)
+Shelter Name - null
+Shelter ID - null
 Petpoint ID (Unique Identifier)
-Image
+Image - null
 FIV Tested (+/-) - Tested Positive, Tested Negative, Not Tested (default)
 FLV Tested (+/-) - Tested Positive, Tested Negative, Not Tested (default)
-FVRCP Vaccination Date
-Rabies Vaccination Date
-Medcial Notes
-Behaviour Notes
+FVRCP Vaccination Date - null
+Rabies Vaccination Date - null
+Medcial Notes - null
+Behaviour Notes - null
 Outcome - Entered into TCR program, euthanized, etc.
 Intake Date
-Foster Placement Date
-Location - Dropdown
-Primary Breed
-Secondary Breed
-Size
+Foster Placement Date - null
+Location - Dropdown (string)
+Primary Breed (string)
+Secondary Breed - null
+Size (string)
 Colour - Primary 
-Colour - Secondary
-Colour Pattern
-Microchip Number
-Microchip Issuer
+Colour - Secondary - null
+Colour Pattern - null
+Microchip Number - null
+Microchip Issuer - null
 
 Intake Details:
-Record Owner
+Record Owner -null
 Intake Type 
-Jurisdiction
-Transew Reason 
-Review Date 
+Jurisdiction (string)
+Transfer Reason (string)
+Review Date - Current Date and Time
 Location = Foster
+pdfLocation - null
 -->
