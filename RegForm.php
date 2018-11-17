@@ -207,14 +207,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = $email;
             $param_role = $code;
 
-            if ($stmt -> execute()){
+            if (!$stmt -> execute()){
 
-               // $stmt->store_result();
-               header("location: index.html");
-            
-            } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";          
+            
+              
+            } else{
+                 // $stmt->store_result();
+               header("location: index.html");
               }
         }
          
