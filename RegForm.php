@@ -5,6 +5,12 @@ require_once "config.php";
 // Define variables and initialize with empty values
 $firstname = $lastname = $username = $email = $password = $confirm_password = $code = "";
 $firstname = $lastname = $username_err = $email_err = $password_err = $confirm_password_err = $code_err = "";
+
+$codeAdmin == 0000;
+$codeAdminTwo == 0001;
+$codeVolunteer == 0002;
+$codeDriver == 0003
+
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -12,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate firstName
     if(empty(trim($_POST["firstname"]))){
         $firstname_err = "Please enter a first name.";
-        echo "<script type='text/javascript'>alert('$username_err');</script>";
+        echo "<script type='text/javascript'>alert('$firstname_err');</script>";
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE firstname = ?";
@@ -59,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->store_result();
                 
                  }else{
-                    $username = trim($_POST["username"]);
+                    $lastname = trim($_POST["lastname"]);
                 }
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
@@ -163,32 +169,102 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     
-    // Validate code and assign user permission
-    if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";     
-        echo "<script type='text/javascript'>alert('$password_err');</script>";
-
-    } else if(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
-        echo "<script type='text/javascript'>alert('$password_err');</script>";
-
+   
+    // Validate email
+    if(empty(trim($_POST["code"]))){
+        $code_err = "Please enter the code given to you by the admin.";
+        echo "<script type='text/javascript'>alert('$email_err');</script>";
     } else{
-        $password = trim($_POST["password"]);
+        // Prepare a select statement
+        $sql = "SELECT id FROM users WHERE code = ?";
+        
+        if($stmt = $mysqli->prepare($sql)){
+            // Bind variables to the prepared statement as parameters
+            $stmt->bind_param("s", $param_code);
+            
+            // Set parameters
+            $param_code = trim($_POST["code"]);
+            
+            // Attempt to execute the prepared statement
+            if($stmt->execute()){
+                // store result
+                $stmt->store_result();
+            } else{
+                $not_good = "Oops! Something went wrong. Please try again later.";
+                echo "<script type='text/javascript'>alert('$not_good');</script>";
+            }
+        }
+         
     }
- 
+   
     // Check input errors before inserting in database
-    if(empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err) && empty($code_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, code) VALUES (?, ?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ss", $param_username, $param_password);
+            $stmt->bind_param("sss", $param_username, $param_password, $param_code);
             
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            $param_code = $code;
+
+
+            if ($code == $codeAdmin){
+                // Attempt to execute the prepared statement
+                if($stmt->execute()){
+                    // Redirect to login page
+                    header("location: welcome.html");
+                    echo "Please be sure to set up your access codes as soon as possible.";
+                    // enter into database
+                } else{
+                    echo "Something went wrong. Please try again later.";}
+            
+                }else if ($code == $codeAdminTwo){
+                
+                // Attempt to execute the prepared statement
+                if($stmt->execute()){
+                    // Redirect to login page
+                    header("location: welcome.html");
+                    echo "Please be sure to set up your access codes as soon as possible.";
+                    // Enter into database
+                } else{
+                    echo "Something went wrong. Please try again later.";}
+            
+
+                }else if {$code == $codeVolunteer{
+                
+                // Attempt to execute the prepared statement
+                if($stmt->execute()){
+                    // Redirect to login page
+                    header("location: welcome.html");
+                    echo "Please be sure to set up your access codes as soon as possible.";
+                    // Enter into Database
+                } else{
+                    echo "Something went wrong. Please try again later.";
+                } 
+
+
+
+            }else if {$code == $codeDriver{
+                
+                // Attempt to execute the prepared statement
+                if($stmt->execute()){
+                    // Redirect to login page
+                    header("location: welcome.html");
+                    echo "Please be sure to set up your access codes as soon as possible.";
+                    // Enter into Database
+                } else{
+                    echo "Something went wrong. Please try again later.";
+                } 
+
+
+
+            }
+
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -202,5 +278,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
 }
+
+ 
 
  
