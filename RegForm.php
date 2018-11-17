@@ -209,26 +209,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
-                echo "<script type='text/javascript'>alert('$not_good');</script>";         
-               }
-    
-            }
-        }         
+                echo "<script type='text/javascript'>alert('$not_good');</script>";          
+              }
+        }
+         
     }
-
-
-
-// © 2018 GitHub, Inc.
-// Terms
-// Privacy
-// Security
-// Status
-// Help
-// Contact GitHub
-// Pricing
-// API
-// Training
-// Blog
-// About
-
-// About
+}
