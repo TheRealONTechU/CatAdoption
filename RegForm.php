@@ -17,20 +17,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$firstname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM LOGIN WHERE firstname = ?";
+        $sql = "SELECT id FROM LOGIN WHERE first_name = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("s", $param_firstname);
             
             // Set parameters
-            $param_firstname = trim($_POST["firstname"]);
+            $param_firstname = trim($_POST["firstName"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
-                $firstname = trim($_POST["firstname"]);
+                $firstname = trim($_POST["firstName"]);
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -39,19 +39,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          
     }
         // Validate lastName
-    if(empty(trim($_POST["lastname"]))){
+    if(empty(trim($_POST["lastName"]))){
         $lastname_err = "Please enter a last name.";
         echo "<script type='text/javascript'>alert('$lastname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM LOGIN WHERE lastname = ?";
+        $sql = "SELECT id FROM LOGIN WHERE last_name = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("s", $param_lastname);
             
             // Set parameters
-            $param_lastname = trim($_POST["lastname"]);
+            $param_lastname = trim($_POST["lastName"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->store_result();
                 
             
-                    $lastname = trim($_POST["lastname"]);
+                    $lastname = trim($_POST["lastName"]);
                 }
              else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
@@ -102,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     // Validate email
     if(empty(trim($_POST["email"]))){
-        $email_err = "Please enter a email.";
+        $email_err = "Please enter an email.";
         echo "<script type='text/javascript'>alert('$email_err');</script>";
     } else{
         // Prepare a select statement
