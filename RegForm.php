@@ -57,8 +57,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
-                
-            
                     $lastname = trim($_POST["lastName"]);
                 }
              else{
