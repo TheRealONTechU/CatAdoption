@@ -22,7 +22,7 @@ function var_error_log( $object=null ){
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
