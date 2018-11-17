@@ -196,8 +196,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->bind_param('ssssss',$param_firstName, $param_lastName, $param_username, $param_password,$param_email, $param_role);
             
             // Set parameters
-            $param_firstName = $firstName;
-            $param_lastName = $lastName;
+            $param_firstName = $firstname;
+            $param_lastName = $lastname;
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash;
             $param_email = $email;
