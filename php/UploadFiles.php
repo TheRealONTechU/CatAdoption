@@ -7,7 +7,7 @@ if (isset($_POST['btn_upload'])){
     $filetmp = $_FILES["file_img"]["tmp_name"];
     $filename = $_FILES["file_img"]["name"];
     $filetype = $_FILES["file_img"]["type"];
-    $filepath ="uploads/".$filename;
+    $filepath ="../uploads/".$filename;
     $petpointID = 'petpoint_id';
 
     move_uploaded_file($filetmp, $filepath);
