@@ -1,4 +1,4 @@
-<?php
+hp
 // Include config file
 require_once "config.php";
  
@@ -81,14 +81,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = trim($_POST["username"]);
             
             // Attempt to execute the prepared statement
-            if($stmt->execute()){
+            if($stmt->execute())
                 // store result
                 $stmt->store_result();
                 
                 if($stmt->num_rows == 1){
                     $username_err = "This username is already taken.";
                     echo "<script type='text/javascript'>alert('$username_err');</script>";
-                } else{
+                } else if{
                     $username = trim($_POST["username"]);
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
@@ -201,3 +201,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          
 }
 }
+
+
+// © 2018 GitHub, Inc.
+// Terms
+// Privacy
+// Security
+// Status
+// Help
+// Contact GitHub
+// Pricing
+// API
+// Training
+// Blog
+// About
