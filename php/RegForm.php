@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config.php";
 
 function var_error_log( $object=null ){
     ob_start();                    // start buffer capture

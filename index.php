@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
  
 // Include config file
-require_once "/php/config.php";
+require_once "config.php";
 
 function var_error_log( $object=null ){
     ob_start();                    // start buffer capture

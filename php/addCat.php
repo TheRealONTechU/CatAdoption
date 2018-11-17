@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
  
 // Include config file
- require_once "../php/config.php";
+ require_once "../config.php";
 
 //declare all variables that need to be populated for the cat information
 $date = $name = $age = $sex = $description = $sn = $shelterName = $shelterId = $petPointId = $image = $FIVTested = $FLVTested = $FVRCPDate = $rabiesDate = $medicalNotes = $behaviourNotes = $outcome = $intakeDate = $fosterPlacementDate = $location = $primaryBreed = $secondaryBreed = $size = $colourPrimary = $colourSecondary = $colourPattern = $microchipNumber = $microchipIssuer = $recordOwner = $intakeType = $jurisdiction = $transferReason = $fosterLocation = $pdfLocation = null;
