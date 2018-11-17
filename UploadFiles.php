@@ -12,7 +12,7 @@ if (isset($_POST['btn_upload'])){
 
     move_uploaded_file($filetmp, $filepath);
 
-$mysqli = "INSERT INTO IMAGES (image_name, image_path, image_type, petpoint_id)
+$mysqli = "INSERT INTO IMAGES (file_name, file_path, file_type, petpoint_id)
             VALUES ('$filename', '$filepath' , '$filetype', $petpointID) ";
 $result = mysql_query($mysqli);
 }
