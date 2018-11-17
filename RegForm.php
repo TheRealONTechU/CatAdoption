@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$firstname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM LOGIN WHERE firstname = ?";
+        $sql = "SELECT id FROM LOGIN WHERE role = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
