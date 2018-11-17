@@ -214,9 +214,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = $email;
             $param_role = $code;
 
-            //var_error_log( $stmt );
-            error_log(var_export($username,true));
-
             if ($stmt -> execute()){
                 $stmt->store_result();
                 header("location: index.html");
