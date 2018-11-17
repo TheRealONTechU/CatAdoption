@@ -4,7 +4,7 @@ server with default setting (user 'root' with no password) */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'rackite_tcradmin');
 define('DB_PASSWORD', 'tcr!management$');
-define('DB_NAME', 'usersDB');
+define('DB_NAME', 'rackite_tcrmanagement');
  
 /* Attempt to connect to MySQL database */
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
