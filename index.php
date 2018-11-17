@@ -70,11 +70,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $password_err = "The password you entered was not valid.";
                         }
                     }
-                } else{
+                } else {
                     // Display an error message if username doesn't exist
                     $username_err = "No account found with that username.";
                 }
-            } else{
+            } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
         }
