@@ -1,4 +1,4 @@
-hp
+<?php
 // Include config file
 require_once "config.php";
  
@@ -216,3 +216,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 // Blog
 // About
 
+// About
