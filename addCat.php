@@ -21,31 +21,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //PRIMARY DETAILS
 
     //populate with a non-null date
-    if((empty(trim($_POST["proposal_date"]))){
+    if(empty(trim($_POST["proposal_date"])){
        $errorMessage = true;
     }
     else{
-        $proposalDate = trim($_POST["proposal_date"]));
+        $proposalDate = trim($_POST["proposal_date"]);
     }
 
     //populate with a non-null string
-    if((empty(trim($_POST["name"]))){
+    if(empty(trim($_POST["name"]))){
         $errorMessage = true;
      }
      else{
-         $name = trim($_POST["name"]));
+         $name = trim($_POST["name"]);
      }
 
      //populate with a non-null integer
-     if(!(empty(trim($_POST["age"]))){
+     if!(empty(trim($_POST["age"]))){
         $age = "";
      }
      else{
-        $age = trim($_POST["age"]));
+        $age = trim($_POST["age"]);
      }
 
      //poulate with a boolean for the cats sex
-     if((empty(trim($_POST["sex"]))){
+     if(empty(trim($_POST["sex"]))){
         $errorMessage = true;
      }
      else{
@@ -58,15 +58,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["description"]))){
+     if(empty(trim($_POST["description"]))){
         $errorMessage = true;
      }
      else{
-         $description = trim($_POST["description"]));
+         $description = trim($_POST["description"]);
      }
 
      //populate with a boolean if the cat was spayed or neutered
-     if((isset($_POST["spay_neuter"])){
+     if(isset($_POST["spay_neuter"])){
         $sn = true;
      }
      else{
@@ -74,31 +74,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["shelter_name"]))){
+     if(empty(trim($_POST["shelter_name"]))){
        $shelterName = "";
      }
      else{
-        $shelterName = trim($_POST["shelter_name"]));
+        $shelterName = trim($_POST["shelter_name"]);
      }
 
      //populate with a string
-     if((empty(trim($_POST["shelter_id"]))){
+     if(empty(trim($_POST["shelter_id"]))){
         $shelterId = "";
      }
      else{
-         $shelterId = trim($_POST["shelter_id"]));
+         $shelterId = trim($_POST["shelter_id"]);
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["petpoint_id"]))){
+     if(empty(trim($_POST["petpoint_id"]))){
         $errorMessage = true;
      }
      else{
-         $petPointId = trim($_POST["petpoint_id"]));
+         $petPointId = trim($_POST["petpoint_id"]);
      }
 
     //populate with a non-null string
-    if((empty(trim($_POST["outcome"]))){
+    if(empty(trim($_POST["outcome"]))){
         $errorMessage = true;
     }
     else{
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     //populate with a string
-    if((empty(trim($_POST["flv_tested"]))){
+    if(empty(trim($_POST["flv_tested"]))){
         $FLVTested = "";
     }
     else{
@@ -114,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     //populate with a string
-    if((empty(trim($_POST["fiv_tested"]))){
+    if(empty(trim($_POST["fiv_tested"]))){
         $FIVTested = "";
     }
     else{
@@ -122,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     //populate with a date
-     if((empty(trim($_POST["fvcrp_date"]))){
+     if(empty(trim($_POST["fvcrp_date"]))){
         $FVRCPDate = "";
      }
      else{
@@ -130,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a date
-     if((empty(trim($_POST["rabies_date"]))){
+     if(empty(trim($_POST["rabies_date"]))){
         $rabiesDate = "";
      }
      else{
@@ -138,7 +138,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["med_notes"]))){
+     if(empty(trim($_POST["med_notes"]))){
         $medicalNotes = "";
      }
      else{
@@ -146,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["behaviour_notes"]))){
+     if(empty(trim($_POST["behaviour_notes"]))){
         $behaviourNotes = "";
      }
      else{
@@ -154,7 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a date
-     if((empty(trim($_POST["intake_date"]))){
+     if(empty(trim($_POST["intake_date"]))){
         $intakeDate = "";
      }
      else{
@@ -162,7 +162,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a date
-     if((empty(trim($_POST["foster_date"]))){
+     if(empty(trim($_POST["foster_date"]))){
         $fosterPlacementDate = "";
      }
      else{
@@ -170,7 +170,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["location"]))){
+     if(empty(trim($_POST["location"]))){
         $fosterLocation = "";
      }
      else{
@@ -178,7 +178,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["prim_breed"]))){
+     if(empty(trim($_POST["prim_breed"]))){
         $errorMessage = true;
      }
      else{
@@ -186,7 +186,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["sec_breed"]))){
+     if(empty(trim($_POST["sec_breed"]))){
         $secondaryBreed = "";
      }
      else{
@@ -194,7 +194,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["size"]))){
+     if(empty(trim($_POST["size"]))){
         $errorMessage = true;
      }
      else{
@@ -202,7 +202,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["prim_colour"]))){
+     if(empty(trim($_POST["prim_colour"]))){
         $errorMessage = true;
      }
      else{
@@ -210,7 +210,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["sec_colour"]))){
+     if(empty(trim($_POST["sec_colour"]))){
         $colourSecondary = "";
      }
      else{
@@ -218,7 +218,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["pattern_colour"]))){
+     if(empty(trim($_POST["pattern_colour"]))){
         $colourPattern = "";
      }
      else{
@@ -226,7 +226,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["chip_id"]))){
+     if(empty(trim($_POST["chip_id"]))){
         $microchipNumber = "";
      }
      else{
@@ -234,7 +234,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["chip_issuer"]))){
+     if(empty(trim($_POST["chip_issuer"]))){
         $microchipIssuer = "";
      }
      else{
@@ -244,7 +244,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      //INTAKE DETAILS
 
      //populate with a string
-     if((empty(trim($_POST["record_owner"]))){
+     if(empty(trim($_POST["record_owner"]))){
         $recordOwner = "";
      }
      else{
@@ -252,7 +252,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["intake_type"]))){
+     if(empty(trim($_POST["intake_type"]))){
         $errorMessage = true;
      }
      else{
@@ -260,7 +260,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["jurisdiction"]))){
+     if(empty(trim($_POST["jurisdiction"]))){
         $errorMessage = true;
      }
      else{
@@ -268,7 +268,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null string
-     if((empty(trim($_POST["transfer_reason"]))){
+     if(empty(trim($_POST["transfer_reason"]))){
         $errorMessage = true;
      }
      else{
@@ -276,7 +276,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a string
-     if((empty(trim($_POST["location_foster"]))){
+     if(empty(trim($_POST["location_foster"]))){
         $recordOwner = "";
      }
      else{
