@@ -38,7 +38,7 @@
         <img src="/pictures/icons/CatIcon.svg" alt="Cat Icon">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
-        <form action="/php/index.php" method="post">
+        <form action="index.php" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <input type="text" name="username" class="form-control" placeholder="Username" required>
                 <span class="help-block"><?php echo $username_err; ?></span>
