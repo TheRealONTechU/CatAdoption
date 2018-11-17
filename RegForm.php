@@ -1,7 +1,15 @@
 <?php
 // Include config file
 require_once "config.php";
- 
+
+function var_error_log( $object=null ){
+    ob_start();                    // start buffer capture
+    var_dump( $object );           // dump the values
+    $contents = ob_get_contents(); // put the buffer into a variable
+    ob_end_clean();                // end capture
+    error_log( $contents );        // log contents of the result of var_dump( $object )
+}
+
 // Define variables and initialize with empty values
 $firstname = $lastname = $username = $email = $password = $confirm_password = $code = "";
 
@@ -61,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
-                    $lastname = trim($_POST["lastName"]);
+                $lastname = trim($_POST["lastName"]);
                 }
              else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
@@ -89,13 +97,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
+                $username = trim($_POST["username"]);
                 
                 if($stmt->num_rows == 1){
                     $username_err = "This username is already taken.";
                     echo "<script type='text/javascript'>alert('$username_err');</script>";
-                    $username = trim($_POST["username"]);
                 }
-
+                
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -117,12 +125,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Set parameters
             $param_email = trim($_POST["email"]);
-            
+
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
-                
+                $email = trim($_POST["email"]);
                 if($stmt->num_rows == 1){
                     $email_err = "This email is already being used.";
                     echo "<script type='text/javascript'>alert('$email_err');</script>";
@@ -160,8 +168,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 
-    
-   
     // Validate code
     if(empty(trim($_POST["code"]))){
         $code_err = "Please enter the code given to you by the admin.";
@@ -181,6 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
+                $code = trim($_POST["code"]);
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -207,12 +214,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = $email;
             $param_role = $code;
 
+            //var_error_log( $stmt );
+            error_log(var_export($username,true));
+
             if ($stmt -> execute()){
                 // $stmt->store_result();
                 header("location: index.html");
- 
-            
-              
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";          
@@ -221,4 +228,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
     }
+    
+    
 }
+?>
