@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$lastname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE lastname = ?";
+        $sql = "SELECT id FROM LOGIN WHERE lastname = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$username_err');</script>"; 
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT id FROM LOGIN WHERE username = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$email_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE email = ?";
+        $sql = "SELECT id FROM LOGIN WHERE email = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -165,7 +165,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$email_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE code = ?";
+        $sql = "SELECT id FROM LOGIN WHERE code = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
