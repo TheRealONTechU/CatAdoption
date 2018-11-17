@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         // Prepare a select statement
 
-        $sql = "SELECT id FROM LOGIN WHERE role = ?";
+        // $sql = "SELECT id FROM LOGIN WHERE role = ?";
 
         $sql = "SELECT id FROM LOGIN WHERE first_name = ?";
 
@@ -207,7 +207,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = $email;
             $param_role = $code;
 
-            if (!$stmt -> execute()){
+            if ($stmt -> execute()){
 
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";          
