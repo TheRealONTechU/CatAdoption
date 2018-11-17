@@ -12,12 +12,12 @@ $confirm_password_err = $code_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate firstName
-    if(empty(trim($_POST["firstname"]))){
+    if(empty(trim($_POST["firstName"]))){
         $firstname_err = "Please enter a first name.";
         echo "<script type='text/javascript'>alert('$firstname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE firstname = ?";
+        $sql = "SELECT id FROM LOGIN WHERE firstname = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -132,7 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
     }
-    
+
     // Validate password
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";     
