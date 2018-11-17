@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config.php";
 
 function var_error_log( $object=null ){
     ob_start();                    // start buffer capture
@@ -216,7 +216,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if ($stmt -> execute()){
                 $stmt->store_result();
-                header("location: index.html");
+                header("location: ../index.html");
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";          
