@@ -201,9 +201,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash;
             $param_email = $email;
-            $param_role = 'V';
+            $param_role = $code;
 
             if ($stmt -> execute()){
+                
                 $stmt->store_result();
             
             } else{
