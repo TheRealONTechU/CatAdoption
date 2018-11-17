@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/pictures/icons/CatIcon.png" sizes="32x32">
     <style type="text/css">
         html, body {
@@ -38,7 +38,7 @@
         <img src="/pictures/icons/CatIcon.svg" alt="Cat Icon">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
-        <form action="index.php" method="post">
+        <form action="/php/index.php" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <input type="text" name="username" class="form-control" placeholder="Username" required>
                 <span class="help-block"><?php echo $username_err; ?></span>
@@ -54,7 +54,7 @@
             </div>
 
             <p>Forgot your username / password? </p><u id = "ModText">Click Here Now!</u></p>
-            <p>Don't have an account? <a href="RegForm.html">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="/html/RegForm.html">Sign up now</a>.</p>
         </form>
         <br>
         <img src="/pictures/icons/TCR-Logo-RGB.png" alt="Toronto Cat Rescue" style="height:85px">
