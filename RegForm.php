@@ -9,7 +9,7 @@ $firstname = $lastname = $username_err = $email_err = $password_err = $confirm_p
 $codeAdmin == 0000;
 $codeAdminTwo == 0001;
 $codeVolunteer == 0002;
-$codeDriver == 0003
+$codeDriver == 0003;
 
  
 // Processing form data when form is submitted
@@ -235,7 +235,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     echo "Something went wrong. Please try again later.";}
             
 
-                }else if {$code == $codeVolunteer{
+                }else if ($code == $codeVolunteer){
                 
                 // Attempt to execute the prepared statement
                 if($stmt->execute()){
@@ -249,7 +249,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-            }else if {$code == $codeDriver{
+            }else if ($code == $codeDriver){
                 
                 // Attempt to execute the prepared statement
                 if($stmt->execute()){
@@ -273,12 +273,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             } else{
                 echo "Something went wrong. Please try again later.";
             }
-        }
-         
     }
-
+         
 }
-
- 
-
- 
