@@ -5,8 +5,16 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
+        th, td{
+            border-style: solid;
+        }
         body{ font: 14px sans-serif; text-align: center; }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
 </head>
 <body>
     <div class="page-header">
@@ -20,7 +28,7 @@
                 <th>Last Name</th>
                 <th>Employee Role</th>
                 <th>Username</th>
-                <th>email</th>
+                <th>Email</th>
                 <th>ID</th>
             </tr>
         </thead>
