@@ -12,25 +12,25 @@ $confirm_password_err = $code_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate firstName
-    if(empty(trim($_POST["firstname"]))){
+    if(empty(trim($_POST["firstName"]))){
         $firstname_err = "Please enter a first name.";
         echo "<script type='text/javascript'>alert('$firstname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE firstname = ?";
+        $sql = "SELECT id FROM users WHERE firstName = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("s", $param_firstname);
             
             // Set parameters
-            $param_firstname = trim($_POST["firstname"]);
+            $param_firstname = trim($_POST["firstName"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
-                $firstname = trim($_POST["firstname"]);
+                $firstname = trim($_POST["firstName"]);
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -39,19 +39,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          
     }
         // Validate lastName
-    if(empty(trim($_POST["lastname"]))){
-        $lastname_err = "Please enter a lastname.";
+    if(empty(trim($_POST["lastName"]))){
+        $lastname_err = "Please enter a last name.";
         echo "<script type='text/javascript'>alert('$lastname_err');</script>";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE lastname = ?";
+        $sql = "SELECT id FROM users WHERE lastName = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("s", $param_lastname);
             
             // Set parameters
-            $param_lastname = trim($_POST["lastname"]);
+            $param_lastname = trim($_POST["lastName"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->store_result();
                 
             
-                    $lastname = trim($_POST["lastname"]);
+                    $lastname = trim($_POST["lastName"]);
                 }
              else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
@@ -144,11 +144,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Confirm password
-    if(empty(trim($_POST["confirm_password"]))){
+    if(empty(trim($_POST["confirmPassword"]))){
         $confirm_password_err = "Please confirm password.";     
         echo "<script type='text/javascript'>alert('$confirm_password_err');</script>";
     } else{
-        $confirm_password = trim($_POST["confirm_password"]);
+        $confirm_password = trim($_POST["confirmPassword"]);
         if(empty($password_err) && ($password != $confirm_password)){
             $confirm_password_err = "Password did not match.";
             echo "<script type='text/javascript'>alert('$confirm_password_err');</script>";
