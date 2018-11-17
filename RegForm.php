@@ -205,7 +205,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if ($stmt -> execute()){
 
-                $stmt->store_result();
+               // $stmt->store_result();
+               header("location: index.html");
             
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
