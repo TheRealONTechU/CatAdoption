@@ -5,12 +5,10 @@ require_once "config.php";
 // Define variables and initialize with empty values
 $firstname = $lastname = $username = $email = $password = $confirm_password = $code = "";
 $firstname = $lastname = $username_err = $email_err = $password_err = $confirm_password_err = $code_err = "";
-
 $codeAdmin == 0000;
 $codeAdminTwo == 0001;
 $codeVolunteer == 0002;
 $codeDriver == 0003;
-
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -19,6 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["firstname"]))){
         $firstname_err = "Please enter a first name.";
         echo "<script type='text/javascript'>alert('$firstname_err');</script>";
+        break;
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE firstname = ?";
@@ -35,7 +34,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // store result
                 $stmt->store_result();
                 $firstname = trim($_POST["firstname"]);
-
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -43,11 +41,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
     }
-
         // Validate lastName
     if(empty(trim($_POST["lastname"]))){
         $lastname_err = "Please enter a lastname.";
         echo "<script type='text/javascript'>alert('$lastname_err');</script>";
+        break;
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE lastname = ?";
@@ -74,11 +72,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
     }
-
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
         echo "<script type='text/javascript'>alert('$username_err');</script>";
+        break; 
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
@@ -108,11 +106,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
     }
-
     // Validate email
     if(empty(trim($_POST["email"]))){
         $email_err = "Please enter a email.";
         echo "<script type='text/javascript'>alert('$email_err');</script>";
+        break;
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE email = ?";
@@ -142,16 +140,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
     }
-
     // Validate password
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";     
         echo "<script type='text/javascript'>alert('$password_err');</script>";
-
     } else if(strlen(trim($_POST["password"])) < 6){
         $password_err = "Password must have atleast 6 characters.";
         echo "<script type='text/javascript'>alert('$password_err');</script>";
-
+        break;
     } else{
         $password = trim($_POST["password"]);
     }
@@ -160,12 +156,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["confirm_password"]))){
         $confirm_password_err = "Please confirm password.";     
         echo "<script type='text/javascript'>alert('$confirm_password_err');</script>";
-
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password)){
             $confirm_password_err = "Password did not match.";
             echo "<script type='text/javascript'>alert('$confirm_password_err');</script>";
+            break;
         }
     }
     
@@ -174,6 +170,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["code"]))){
         $code_err = "Please enter the code given to you by the admin.";
         echo "<script type='text/javascript'>alert('$email_err');</script>";
+        break;
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE code = ?";
@@ -211,8 +208,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             $param_code = $code;
-
-
             if ($code == $codeAdmin){
                 // Attempt to execute the prepared statement
                 if($stmt->execute()){
@@ -234,7 +229,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 } else{
                     echo "Something went wrong. Please try again later.";}
             
-
                 }else if ($code == $codeVolunteer){
                 
                 // Attempt to execute the prepared statement
@@ -246,9 +240,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 } else{
                     echo "Something went wrong. Please try again later.";
                 } 
-
-
-
             }else if ($code == $codeDriver){
                 
                 // Attempt to execute the prepared statement
@@ -260,11 +251,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 } else{
                     echo "Something went wrong. Please try again later.";
                 } 
-
-
-
             }
-
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -276,3 +263,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
          
 }
+
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
