@@ -17,7 +17,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script type='text/javascript'>alert('$firstname_err');</script>";
     } else{
         // Prepare a select statement
+
+        // $sql = "SELECT id FROM LOGIN WHERE role = ?";
+
         $sql = "SELECT id FROM LOGIN WHERE first_name = ?";
+
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -204,14 +208,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_role = $code;
 
             if ($stmt -> execute()){
-
-               // $stmt->store_result();
-               header("location: index.html");
+                // $stmt->store_result();
+                header("location: index.html");
+ 
             
+              
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";          
-              }
+ 
+            }
         }
          
     }

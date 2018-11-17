@@ -1,3 +1,17 @@
+<!--
+Admins View: Update Roles
+             Cat Locator
+             Cat Info
+             Employee Info  
+             import files
+Volunteer: import files 
+           import Cat info 
+           Cat locator 
+Driver: Cat Location 
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +24,36 @@
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1>Hi, Admin. Welcome to TCR Managment.</h1>
     </div>
-    <p>
-    <!-- <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a> -->
+    <div>
+        <form action="CatLocator.html">
+            <input type="submit" value="Cat Locator" >
+        </form>
+    </div>
+    <div>
+        <form action="UpdateRoles.html">
+            <input type="submit" value="Update Employee Roles" >
+        </form>
+    </div>
+    <div>
+        <form action="CatInfo.html">
+            <input type="submit" value="Cat Info" >
+        </form>
+    </div>
+    <div>
+        <form action="EmployeeInfo.html">
+            <input type="submit" value="Employee info" >
+        </form>
+    </div>
+    <div>
+        <form action="ImportCatFiles.html">
+            <input type="submit" value="Import Cat Files and Data" >
+        </form>
+    </div>
+ <!--   <p>
+    <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.html" class="btn btn-danger">Sign Out of Your Account</a>
-    </p>
+    </p>-->
 </body>
 </html>
