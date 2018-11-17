@@ -208,15 +208,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_role = $code;
 
             if ($stmt -> execute()){
-
-                $not_good = "Oops! Something went wrong. Please try again later.";
-                echo "<script type='text/javascript'>alert('$not_good');</script>";          
+                // $stmt->store_result();
+                header("location: index.html");
+ 
             
               
             } else{
-                 // $stmt->store_result();
-               header("location: index.html");
-              }
+                $not_good = "Oops! Something went wrong. Please try again later.";
+                echo "<script type='text/javascript'>alert('$not_good');</script>";          
+ 
+            }
         }
          
     }
