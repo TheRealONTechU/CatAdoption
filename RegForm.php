@@ -204,7 +204,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 VALUES (?, ?, ?, ?, ?, ?)";
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param('ssssss',$param_firstname, $param_lastname, $param_username, $param_password, $param_email, $param_role);
+            $stmt->bind_param('ssssss',$param_firstname, $param_lastname, $param_username, $param_password, $param_email, $param_code);
             
             // Set parameters
             $param_firstName = $firstname;
@@ -218,7 +218,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             error_log(var_export($username,true));
 
             if ($stmt -> execute()){
-                // $stmt->store_result();
+                $stmt->store_result();
                 header("location: index.html");
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
