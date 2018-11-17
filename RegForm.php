@@ -84,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = trim($_POST["username"]);
             
             // Attempt to execute the prepared statement
-            if($stmt->execute())
+            if($stmt->execute()){
                 // store result
                 $stmt->store_result();
                 
@@ -92,6 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $username_err = "This username is already taken.";
                     echo "<script type='text/javascript'>alert('$username_err');</script>";
                     $username = trim($_POST["username"]);
+                }
 
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
