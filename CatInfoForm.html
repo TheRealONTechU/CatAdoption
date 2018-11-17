@@ -238,14 +238,25 @@
                 <label for="Foster Location">Foster Location:</label>
                 <textarea id="Foster Location" name="TFoster Location"></textarea>
             </div>
-
+        </form>
             <h2>Upload Documents</h2>
+        <form action = "UploadFiles.php" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for ="Picture">Picture:</label>
+                <input type="file" name="file_img"/>
+            </div>
+            <div>
+                <label for ="PDF">PDF:</label>
+                <input type="file" name="file_img"/>
+            </div>
+            
+        </form>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
         
-        </form>
+
     </div>    
 </body>
 </html>
