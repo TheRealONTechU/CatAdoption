@@ -191,7 +191,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare an insert statement
         $sql = "INSERT INTO LOGIN (first_name, last_name, username, password, email, role) 
                 VALUES (?, ?, ?, ?, ?, ?)";
-         $result = mysql_query($mysqli);
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param('ssssss',$param_firstName, $param_lastName, $param_username, $param_password,$param_email, $param_role);
