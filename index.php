@@ -10,7 +10,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
  
 // Include config file
 require_once "config.php";
- 
 
 function var_error_log( $object=null ){
     ob_start();                    // start buffer capture
@@ -64,10 +63,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $stmt->bind_result($id, $username, $hashed_password);
                     if($stmt->fetch()){
                         if(password_verify($password, $hashed_password)){
-                            error_log(var_export($password,true));
-                            error_log(var_export($username,true));
-                            error_log(var_export($id,true));
-                            error_log(var_export($hashed_password,true));
                             // Password is correct, so start a new session
                             session_start();
                             
