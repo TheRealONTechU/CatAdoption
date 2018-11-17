@@ -154,6 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     
+    
    
     // Validate email
     if(empty(trim($_POST["code"]))){
