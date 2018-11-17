@@ -14,6 +14,6 @@ if (isset($_POST['btn_upload'])){
 
 $mysqli = "INSERT INTO FILE (file_name, file_path, file_type, petpoint_id)
             VALUES ('$filename', '$filepath' , '$filetype', $petpointID) ";
-$result = mysqli_query($mysqli,MYSQLI_STORE_RESULT());
+$result = mysqli_query($mysqli,MYSQLI_STORE_RESULT($mysqli));
 }
 ?>
