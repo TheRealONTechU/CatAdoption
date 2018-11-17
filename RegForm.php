@@ -56,14 +56,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // store result
                 $stmt->store_result();
                 
-                 }else{
+            
                     $lastname = trim($_POST["lastname"]);
                 }
-            } else{
+             else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
             }
         }
+    }
 
     // Validate username
     if(empty(trim($_POST["username"]))){
@@ -88,8 +89,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if($stmt->num_rows == 1){
                     $username_err = "This username is already taken.";
                     echo "<script type='text/javascript'>alert('$username_err');</script>";
-                } else if{
                     $username = trim($_POST["username"]);
+
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -120,9 +121,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if($stmt->num_rows == 1){
                     $email_err = "This email is already being used.";
                     echo "<script type='text/javascript'>alert('$email_err');</script>";
-                } else{
-                    $email = trim($_POST["email"]);
                 }
+            
             } else{
                 $not_good = "Oops! Something went wrong. Please try again later.";
                 echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -153,10 +153,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         }
     }
-    
+
     
    
-    // Validate email
+    // Validate code
     if(empty(trim($_POST["code"]))){
         $code_err = "Please enter the code given to you by the admin.";
         echo "<script type='text/javascript'>alert('$email_err');</script>";
