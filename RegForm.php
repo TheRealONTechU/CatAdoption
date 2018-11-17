@@ -189,7 +189,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err) && empty($code_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password, code) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO LOGIN (username, password, code) VALUES (?, ?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
