@@ -189,21 +189,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($firstname_err) && empty($lastname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err) && empty($code_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO LOGIN (username, password, code) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO LOGIN (first_name, last_name, username, password, email, role) 
+                VALUES (?, ?, ?, ?, ?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("sss", $param_username, $param_password, $param_code);
+            $stmt->bind_param("ssssss", $param_firstName, $param_lastName, $param_username, $param_password, $param_role);
             
             // Set parameters
+            $param_firstName = $firstName;
+            $param_lastName = $lastName;
             $param_username = $username;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $param_code = $code;
-           
+            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash;
+            $param_email = $email;
+            $param_role = $role;
+
+            if ($stmt -> execute()){
+                $stmt->store_result();
+            
+            } else{
+                $not_good = "Oops! Something went wrong. Please try again later.";
+                echo "<script type='text/javascript'>alert('$not_good');</script>";         
+               }
+    
+            }
+        }         
     }
-         
-}
-}
+
 
 
 // © 2018 GitHub, Inc.
