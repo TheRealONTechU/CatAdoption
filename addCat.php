@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //PRIMARY DETAILS
 
     //populate with a non-null date
-    if(empty(trim($_POST["proposal_date"])){
+    if (empty(trim($_POST["proposal_date"]))){
        $errorMessage = true;
     }
     else{
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      }
 
      //populate with a non-null integer
-     if!(empty(trim($_POST["age"]))){
+     if (!(empty(trim($_POST["age"])))){
         $age = "";
      }
      else{
