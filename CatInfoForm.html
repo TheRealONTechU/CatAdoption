@@ -5,8 +5,28 @@
     <title>Enter A Cat</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
+
+        html, body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body { 
+            display: table-cell;
+            vertical-align: middle;
+            font: 14px sans-serif; 
+            text-align: center;
+            background-color: rgb(255, 230, 255);
+        }
+
+        .wrapper{ 
+            width: 350px; 
+            padding: 20px; 
+        }
     </style>
 </head>
 <body>
@@ -40,7 +60,7 @@
                 <textarea id="Description" name="Description"></textarea>
             </div>
             <div>
-                <label for="S/N">S/N:</label>
+                <label for="S/N">Spayed/Neutered:</label>
                 <input type = "checkbox" id = "S/N" name="S/N"/>
             </div>
             <div>
@@ -60,7 +80,7 @@
                 <select name="Outcome">
     
                     <option>Entered into TCR</option>
-                    <option>Denied TRC</option>
+                    <option>Denied TCR</option>
                     <option>Euthanized</option>
                         
                 </select>
