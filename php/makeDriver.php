@@ -1,12 +1,12 @@
 <?php
 // Include config file
-include "../config.php";
+require_once "../config.php";
 
-if($_GET['driverole'] && $_GET['user']) {
-    $is_driver = $_GET['driverole'];
-    $user = $_GET['user'];
+if(!empty($_POST['driverole']) && !empty($_POST['username'])) {
+    $is_driver = $_POST['driverole'];
+    $user = $_POST['username'];
 
-    $sql = mysqli_query($mysqli,"SELECT FROM LOGIN (username, role) WHERE username=$user");
+    $sql = mysqli_query("SELECT FROM LOGIN (username, role) WHERE username=$user");
     
     if(mysql_num_rows($sql) != 0) {
 
@@ -22,7 +22,7 @@ if($_GET['driverole'] && $_GET['user']) {
     echo("rows for user ".mysql_num_rows($sql));
 
 } else {
-    echo($_GET['user']);
+    echo "error :(";
 }
 
 ?>
