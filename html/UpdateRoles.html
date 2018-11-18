@@ -16,7 +16,7 @@
         <br><br>
     </div>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function submit() {
             var xmlHttp = new XMLHttpRequest();
 
@@ -33,13 +33,13 @@
             resp = xmlHttp.responseText;
             document.getElementById('ins').innerHTML+=resp+"<br>";
         }
-    </script>
+    </script> -->
 
-    <form method="POST" action="../php/makeDriver.php?"></form>
+    <form method="POST" action="../php/makeDriver.php">
         <div>
-            <label for="Username">Enter Empoyee Username:</label>
+            <label for="username">Enter Empoyee Username:</label>
             <br>
-            <input type="text" id="username" name="username" />
+            <input type="text" id="username" name="username">
             <br>
         </div>
         <br><br>
@@ -51,7 +51,7 @@
         </div>
         <br><br>
 
-        <input type="submit" class="btn btn-warning" value="Update Role" onclick="submit()">
+        <input type="submit" class="btn btn-warning" value="Update Role">
 
         <br><br>
     </form>
