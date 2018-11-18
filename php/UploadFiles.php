@@ -1,4 +1,7 @@
 <?php
+
+include '../config.php';
+
 $doc = '';
 
 $petpointID = 'test';
