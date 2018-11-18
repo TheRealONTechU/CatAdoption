@@ -1,6 +1,5 @@
 <?php
 
-        if ($_SESSION['username']== admin || $_SESSION['username'] != pujan824){
         if ($_SESSION['username']== admin || $_SESSION['username'] == pujan824){
 
             header("location: ../html/welcome.html");
