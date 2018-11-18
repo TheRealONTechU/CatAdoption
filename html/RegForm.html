@@ -69,19 +69,23 @@
                 <span class="help-block"><?php echo $code_err; ?></span>
             </div>    
 
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-default" value="Reset">
-            </div>
+            <form action ="DeepValidation.php">
 
-            <p>
+                if ($username == $admin || $username == 'pujan824'){
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-default" value="Reset">
         
-                    <a href = "../html/welcome.html" ><input type = "btn btn-danger"  value = "Back to Home"></a>
-                   
+                <a href = "../html/welcome.html" ><input type = "btn btn-danger"  value = "Back to Home"></a>
+                  
+            }else{
+                <a href = "../html/WelcomeVolunteer.html"><input type = "button" class = "btn btn-danger" name = "Go back to Home" placeholder = "Home"></a>
+            }
                 
-                    </p>
-                
+            </form>
+
+         <p>
             <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        </p>
 
         </form>
     </div>    
