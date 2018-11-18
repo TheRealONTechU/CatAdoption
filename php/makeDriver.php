@@ -19,11 +19,6 @@ if(!empty($_POST['username'])) {
     } else {
         echo "Could not find user :(";
     }
-
-    error_log("rows for user ".mysqli_num_rows($sql));
-
-} else {
-    error_log("error :(");
 }
 
 ?>
