@@ -73,10 +73,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             // Redirect user to welcome page
                             if ($username == admin || $username == pujan824){
-                                header("location: ../html/WelcomeVolunteer.html");
+                                header("location: ../html/welcome.html"); 
                             }
                             else{
-                               header("location: ../html/welcome.html"); 
+                               header("location: ../html/WelcomeVolunteer.html");
                             }
                             
                         } else{
