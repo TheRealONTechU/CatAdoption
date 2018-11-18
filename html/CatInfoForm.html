@@ -213,7 +213,6 @@
                     <option>Help for Cats</option>
                     <option>KWCC</option>
                     <option>Non-Coalition partner</option>
-                                            
                 </select>
             </div>
             <br>
@@ -232,30 +231,11 @@
                 <textarea id="Foster Location" name="location_foster"></textarea>
             </div>
         </form>
-            <h2>Upload Documents</h2>
-        <form action = "../php/UploadFiles.php" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for ="Picture">Picture:</label>
-                <input type="file" name="file_img"/>
-                <input type ="submit" name ="btn_upload" value="Upload">
-            </div>
-            <div>
-                <label for ="PDF">PDF:</label>
-                <input type="file" name="file_img"/>
-                <input type ="submit" name ="btn_upload" value="Upload">
-            </div>
-            <div>
-                <label for="PetPoint ID">PetPoint ID:</label>
-                <input type="text" id="PetPoint ID" name="petpoint_id" />
-            </div>
-        </form>
-        <div><label for="Error Reading"></label></div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-default" value="Reset">
-            </div>
-        
-
+    </div> 
+    <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="reset" class="btn btn-default" value="Reset">
+        </div>
     </div> 
     <p>
         <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>

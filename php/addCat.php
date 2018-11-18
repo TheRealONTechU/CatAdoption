@@ -277,6 +277,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      else{
         $recordOwner = $_POST["location_foster"];
      }
+
+   header("Location: ../html/CatDocumentUpload.html");
 }
+
+
+
     
 ?>
