@@ -1,10 +1,10 @@
- <?php
+<?php
     // Include config file
     //require_once "../config.php";
 
     include '../config.php';
 
-    $sql = mysqli_query($mysqli,"SELECT * FROM CATS");
+    $sql = mysqli_query($mysqli,"SELECT * FROM LOGIN");
     $rows = array();
 
     if(!($sql === FALSE)) {
