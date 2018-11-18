@@ -2,7 +2,7 @@
 // Include config file
 require_once "../config.php";
 
-if(!empty($_POST['driverole']) && !empty($_POST['username'])) {
+if(!empty($_POST['username'])) {
     $is_driver = $_POST['driverole'];
     $user = $_POST['username'];
 
