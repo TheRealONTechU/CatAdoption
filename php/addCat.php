@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       for($i=0; i<count(qv); i++) {
          $strqy = $strqy + qv[i] + ", ";
       }
-      $sql = "INSERT INTO THIS_NEEDS_A_TABLE_NAME name, age, sex, description, spray_neuter, shelter_name, shelter_id, petPointId, image, FIVTested, FLVTested, FVRCPDate, rabiesDate, medicalNotes, behaviorNotes, outcome, intakeDate, fosterPlacementDate, location, primaryBreed, secondaryBreed, size, colourPrimary, colourSecondary, colourPattern, microchipNumber, microchipIssuer, recordOwner, intakeType, jurisdiction, transferReason, fosterLocation, pdfLocation, VALUES $strqy";
+      $sql = "INSERT INTO CATS name, age, sex, description, spray_neuter, shelter_name, shelter_id, petPointId, image, FIVTested, FLVTested, FVRCPDate, rabiesDate, medicalNotes, behaviorNotes, outcome, intakeDate, fosterPlacementDate, location, primaryBreed, secondaryBreed, size, colourPrimary, colourSecondary, colourPattern, microchipNumber, microchipIssuer, recordOwner, intakeType, jurisdiction, transferReason, fosterLocation, pdfLocation, VALUES $strqy";
 
       echo strqy;
    }
