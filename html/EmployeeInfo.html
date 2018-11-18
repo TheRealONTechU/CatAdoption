@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../pictures/icons/CatIcon.png">
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#example').DataTable();
-        } );
-    </script>
+    
 </head>
 <body onload="getTableData()">
     <div class="page-header">
@@ -27,18 +23,18 @@
             resp = xmlHttp.responseText;
             if(resp != '') {
                 var tbl = JSON.parse(resp);
-                for(var i=0; i<cars.length; i++) {
+                for(var i=0; i<tbl.length; i++) {
                     document.getElementById('tbl_ctr').innerHTML += "<p>" + tbl[i] + "</p><br>";       
                 }
             }
         }
     </script>
 
-    <br>
+    <br><br>
     <div class="wrapper" id="tbl_ctr">
 
     </div>
-
+    <br><br>
     <p>
         <a href="../html/welcome.html" class="btn btn-danger">Return to Home Page</a>
     </p>

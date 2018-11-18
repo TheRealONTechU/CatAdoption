@@ -1,13 +1,19 @@
  <?php
     // Include config file
-    require_once "../config.php";
+    //require_once "../config.php";
 
-    $sql = mysqli_query("SELECT * FROM LOGIN");
+    include '../config.php';
+
+    $sql = mysqli_query($mysqli,"SELECT * FROM LOGIN");
     $rows = array();
 
-    while($r = mysqli(fetch_assoc($sql))) {
+    if($sql === TRUE) {
+    while($r = mysql_fetch_array($sql)) {
         $rows[] = $r;
     }
     
     echo json_encode($rows);
+    } else {
+        echo "{}";
+    }
 ?>

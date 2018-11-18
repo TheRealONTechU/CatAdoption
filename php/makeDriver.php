@@ -1,12 +1,12 @@
 <?php
 // Include config file
-require_once "../config.php";
+include "../config.php";
 
 if(!empty($_POST['driverole']) && !empty($_POST['username'])) {
     $is_driver = $_POST['driverole'];
     $user = $_POST['Username'];
 
-    $sql = mysqli_query("SELECT FROM LOGIN (username, role) WHERE username=$user");
+    $sql = mysqli_query($mysqli,"SELECT FROM LOGIN (username, role) WHERE username=$user");
     
     if(mysql_num_rows($sql) != 0) {
 
