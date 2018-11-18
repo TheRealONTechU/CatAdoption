@@ -18,7 +18,7 @@
     $stmt== store_result();
     $role = trim($_POST["role"]);
          header("location: ../html/welcome.html");
-         
+
 
 
 
