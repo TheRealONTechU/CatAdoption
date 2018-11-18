@@ -2,10 +2,10 @@
 
     $sql = "SELECT role FROM LOGIN"; 
            
-    if ($role ==  'C' || $role == "C"){
-        $role == 'V';
-    } else if ($role == 'V' || 'v'){
-        $role == 'C';
+    if ($role ==  'C' || $role == "c"){
+        $role = 'V';
+    } else if ($role == 'V' || $role == 'v'){
+        $role = 'C';
     } else {
         $not_good = "Oops! Something went wrong. Please try again later.";
         echo "<script type='text/javascript'>alert('$not_good');</script>";
@@ -14,5 +14,5 @@
     $stmt== store_result();
     $role = trim($_POST["role"]);
     header("location: ../html/welcome.html");
-        
+
 ?>
