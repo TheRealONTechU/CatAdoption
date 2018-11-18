@@ -6,31 +6,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="icon" type="image/png" href="../pictures/icons/CatIcon.png">
     <style type="text/css">
+        html {
+            float: center;
+            display: table;
+            margin: auto;
+        }
         h1{
             padding: 15px;
+        }
+        img{
+            float: center;
+        }
+        img.location{
+            height: 13vh;
+        }
+        html, body {
+            height: 100%;
+        }
+        body { 
+            display: table-cell;
+            vertical-align: middle;
+            font: 14px sans-serif; 
+            text-align: center;
+        }
+        td{
+            width: 15%;
+            padding: 10px;
+            padding-top: 0;
+        }
+        table{
+            width: 50vh;
         }
     </style>
 </head>
 <body>
-    <h1 id = "name">PLACEHOLDER</h1>   
-    <div id = "pictures"> <img src="../pictures/icons/PirateEye.jpg" style = "width:10%; padding:5px" ></div>
+    <h1 id = "name">Bob The Builder</h1>   
+    <div id = "pictures"> <img src="../pictures/icons/PirateEye.jpg" style = "width:20%; padding:5px"></div>
     <br>
-    <table>
+    <table align="center">
         <tr>
             <td id = "arrival"></td>
-            <td style = "width:10px"></td>
-            <td id = "store"></td>
-            <td style = "width:10px"></td>
+            <td id = "vet"></td>
+            <td id = "fosterOrStore"><img src="../pictures/icons/CatIcon.svg" style="height: 5vh"></td>
             <td id = "adoption"></td>
         </tr>
+            <td><br></td>
         <tr>
-            <td id = "arrival"><img src="../pictures/icons/IntakeIcon.svg" style = "height:50%"></td>
-            <td style = "width:10px"></td>
-            <td id = "store"><img src="../pictures/icons/FosterHouseIcon.svg" style = "height:28%"></td>
-            <td style = "width:10px"></td>
-            <td id = "adoption"><img src="../pictures/icons/AdoptionIcon.svg" style = "height:60%"></td>
+            <td><img class="location" src="../pictures/icons/IntakeIcon.svg" ></td>
+            <td><img class="location" src="../pictures/icons/VetIcon.svg"> </td>
+            <td><img class="location" src="../pictures/icons/FosterHouseIcon.svg"></td>
+            <td><img class="location" src="../pictures/icons/AdoptionIcon.svg"></td>
+        </tr>
+        <tr>
+            <td>Intake</td>
+            <td>Veterinarian</td>
+            <td>Foster home / Store</td>
+            <td>Adoption Interview</td>
         </tr>
     </table>
+
+    <br>
+
     <p>
         <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </p>
