@@ -19,7 +19,7 @@ if(!empty($_POST['driverole']) && !empty($_POST['username'])) {
         echo "Could not find user :(";
     }
 
-    echo("rows for user ".mysql_num_rows($sql));
+    error_log("rows for user ".mysql_num_rows($sql));
 
 } else {
     echo "error :(";
