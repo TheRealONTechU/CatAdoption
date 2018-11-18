@@ -22,7 +22,7 @@ if(!empty($_POST['driverole']) && !empty($_POST['username'])) {
     error_log("rows for user ".mysql_num_rows($sql));
 
 } else {
-    echo "error :(";
+    error_log("error :(");
 }
 
 ?>
