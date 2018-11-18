@@ -13,16 +13,26 @@
 <body>
     <div class="page-header">
         <h1>Welcome to Employee Management System</h1>
+        <br><br>
     </div>
-    <div>
-        <label for="Username">Enter Empoyee Username:</label>
-        <input type="text" id="Username" name="Username" />
-    </div>
-
-    <div>
-        <label for="Role">Enter New Role:</label>
-        <input type="text" id="Role" name="Role" /> 
-    </div>
+    <form method="POST" action="../php/makeDriver.php"></form>
+        <div>
+            <label for="Username">Enter Empoyee Username:</label>
+            <br>
+            <input type="text" id="username" name="username" />
+            <br>
+        </div>
+        <br><br>
+        <div>
+            <label for="Role">User is Driver:</label>
+            <br>
+            <input type="checkbox" id="driverole" name="driverole" /> 
+            <br>
+        </div>
+        <br><br>
+        <a href="../php/makeDriver.php" class="btn btn-warning">Update Role</a>
+        <br><br>
+    </form>
 
     <p>
         <a href="../html/welcome.html" class="btn btn-danger">Return to Home Page</a>
