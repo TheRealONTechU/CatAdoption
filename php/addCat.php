@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
 
-$querys = array("name","age","sex","description","spray_neuter","shelter_name","shelter_id","petPointId","image","FIVTested","FLVTested","FVRCPDate","rabiesDate","medicalNotes","behaviorNotes","outcome","intakeDate","fosterPlacementDate","location","primaryBreed","secondaryBreed","size","colourPrimary","colourSecondary","colourPattern","microchipNumber","microchipIssuer","recordOwner","intakeType","jurisdiction","transferReason","fosterLocation","pdfLocation");
+$querys = array("date", "name","age","sex","description","spray_neuter","shelter_name","shelter_id","petPointId","image","FIVTested","FLVTested","FVRCPDate","rabiesDate","medicalNotes","behaviorNotes","outcome","intakeDate","fosterPlacementDate","location","primaryBreed","secondaryBreed","size","colourPrimary","colourSecondary","colourPattern","microchipNumber","microchipIssuer","recordOwner","intakeType","jurisdiction","transferReason","fosterLocation","pdfLocation");
 $qv = array();
 
 // Include config file
@@ -14,7 +14,7 @@ $errorMessage = false;
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+6
    for($i=0; $i<count(querys); $i++) {
       if(empty(trim($_POST[querys[$i]]))) {
          $errorMessage = true;
