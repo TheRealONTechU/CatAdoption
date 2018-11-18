@@ -32,8 +32,8 @@ if($doc != '') {
         echo($filename);
         echo($filetype);
 
-        $mysqli = "INSERT INTO FILE (file_name, file_path, file_type, petpoint_id) VALUES ('$filename', '$path' , '$filetype', $petpointID)";
-        $result = mysqli_query($mysqli,MYSQLI_STORE_RESULT($mysqli));
+        $sqli = "INSERT INTO FILE (file_name, file_path, file_type, petpoint_id) VALUES ('$filename', '$path' , '$filetype', $petpointID)";
+        $result = mysqli_query($mysqli,MYSQLI_STORE_RESULT($sqli));
         
         echo(`and the final uploaded`);
     } else {
