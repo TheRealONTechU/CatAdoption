@@ -8,7 +8,7 @@ if(!empty($_POST['username'])) {
 
     $sql = mysqli_query("SELECT FROM LOGIN (username, role) WHERE username=$user");
     
-    if(mysql_num_rows($sql) != 0) {
+    if(mysqli_num_rows($sql) != 0) {
 
         echo `role update for ${$user} to ${$is_driver}`;
 
@@ -19,7 +19,7 @@ if(!empty($_POST['username'])) {
         echo "Could not find user :(";
     }
 
-    error_log("rows for user ".mysql_num_rows($sql));
+    error_log("rows for user ".mysqli_num_rows($sql));
 
 } else {
     error_log("error :(");
