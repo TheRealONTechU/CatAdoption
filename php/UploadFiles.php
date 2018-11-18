@@ -1,19 +1,51 @@
 <?php
 
-require_once "../config.php";
+include '../config.php';
 
-if (isset($_POST['btn_upload'])){
+$doc = '';
 
-    $filetmp = $_FILES["file_img"]["tmp_name"];
-    $filename = $_FILES["file_img"]["name"];
-    $filetype = $_FILES["file_img"]["type"];
-    $filepath ="../uploads/".$filename;
-    $petpointID = 'petpoint_id';
+$petpointID = 'test';
 
-    move_uploaded_file($filetmp, $filepath);
-
-$mysqli = "INSERT INTO FILE (file_name, file_path, file_type, petpoint_id)
-            VALUES ('$filename', '$filepath' , '$filetype', $petpointID) ";
-$result = mysqli_query($mysqli,MYSQLI_STORE_RESULT($mysqli));
+if(!empty($_FILES['cat_doc_upload'])) {
+    $doc = 'cat_doc_upload';
+} else if(!empty($_FILES['cat_pdf_upload'])) {
+    $doc = 'cat_pdf_upload';
+} else {
+    echo "The server encountered an issue with your file upload request, please try again later!";
+    return;
 }
+
+if($doc != '') {
+    $path = '../uploads/';
+    $path = $path.basename($_FILES[$doc]['name']);
+    $filename = $_FILES[$doc]['name'];
+
+    echo("found file, uploading...");
+
+    if(move_uploaded_file($_FILES[$doc]['tmp_name'],$path)) {
+        
+        echo(`Uploaded to temp dir`);
+
+        $filename = $_FILES[$doc]['tmp_name'];
+        $filetype = $_FILES[$doc]['type'];
+
+        echo($filename);
+        echo($filetype);
+
+        $sqli = "INSERT INTO FILE (file_name, file_path, file_type, petpoint_id) VALUES ('$filename', '$path' , '$filetype', $petpointID)";
+        $result = MYSQLI_STORE_RESULT($mysqli,$sqli);
+        
+        if($result != NULL) {
+            echo(`and the final uploaded`);
+        } else {
+            echo('err');
+        }
+
+        
+    } else {
+        echo(`couldnt uplopad :(`);
+    }
+}
+echo "done";
+
 ?>

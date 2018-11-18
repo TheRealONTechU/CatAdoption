@@ -3,21 +3,13 @@
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: /html/welcome.html");
-    exit;
-}
+// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+//     header("location: /html/welcome.html");
+//     exit;
+// }
  
 // Include config file
 require_once "config.php";
-
-function var_error_log( $object=null ){
-    ob_start();                    // start buffer capture
-    var_dump( $object );           // dump the values
-    $contents = ob_get_contents(); // put the buffer into a variable
-    ob_end_clean();                // end capture
-    error_log( $contents );        // log contents of the result of var_dump( $object )
-}
 
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -72,7 +64,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: /html/welcome.html");
+                            if ($username == admin || $username == pujan824){
+                                header("location: ../html/welcome.html"); 
+                            }
+                            else{
+                               header("location: ../html/WelcomeVolunteer.html");
+                            }
+                            
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";

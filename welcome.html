@@ -1,37 +1,39 @@
-<!--
-Admins View: Update Roles
-             Cat Locator
-             Cat Info
-             Employee Info  
-             import files
-Volunteer: import files 
-           import Cat info 
-           Cat locator 
-Driver: Cat Location 
-
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="../pictures/icons/CatIcon.png">
-    <style type="text/css">
+  <meta charset="utf-8">
+  <meta name="viewport"
+     content="width=device-width, initial-scale=1, user-scalable=yes">
+  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+
+    <style>
+        .container{
+            border-style: solid black;
+        }
+        #AdminGreeting{
+            text-align:center;
+            color: #0012FF;
+        }
     </style>
+   
 </head>
 <body>
-    <div class="page-header">
-        <h1><b>Hi, Administrator. Welcome to the TCR Managment System.</b></h1>
-    </div>
+
+        <h1 id = "AdminGreeting"><b>Hi, Administrator. Welcome to the TCR Managment System.</b></h1>
+   
+  <div class= "container">
+    <div class = "row">
+    <div class = "col-sm-3"> 
+     
     <p>
         CAT ACTIONS
     </p>
+
     <br>
+    
     <div>
         <form action="../html/CatGUI.html">
             <input type="submit" value="Cat Locator" >
@@ -50,12 +52,18 @@ Driver: Cat Location
         </form>
     </div>
     <br>
+</div>
     <div>
+
         <form action="../html/CatInfoForm.html">
             <input type="submit" value="Import Cat Files and Data" >
         </form>
     </div>
     <br>
+
+    <div class = "row">
+        <div class ="col-sm-3">
+
     <p>
             TEAM ACTIONS
     </p>
@@ -81,5 +89,10 @@ Driver: Cat Location
     <p>
         <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </p>
+
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

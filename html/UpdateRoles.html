@@ -13,17 +13,64 @@
 <body>
     <div class="page-header">
         <h1>Welcome to Employee Management System</h1>
-    </div>
-    <div>
-        <label for="Username">Enter Empoyee Username:</label>
-        <input type="text" id="Username" name="Username" />
+        <br><br>
     </div>
 
-    <div>
-        <label for="Role">Enter New Role:</label>
-        <input type="text" id="Role" name="Role" /> 
+    <!-- <script type="text/javascript">
+        function submit() {
+            var xmlHttp = new XMLHttpRequest();
+
+            var bool = document.getElementById('driverole').checked;
+            var usr = document.getElementById('username').innerHTML;
+
+            if(!bool) {
+                bool = false;
+            }
+            xmlHttp.open('GET','../php/makeDriver.php?driverole='+bool+'&user='+usr,true);
+            xmlHttp.send(null);
+            
+            var resp = '';
+            resp = xmlHttp.responseText;
+            document.getElementById('ins').innerHTML+=resp+"<br>";
+        }
+    </script> -->
+
+    <form method="POST" action="../php/makeDriver.php">
+        <div>
+            <label for="username">Enter Empoyee Username:</label>
+            <br>
+            <input type="text" id="username" name="username" required>
+            <br>
+        </div>
+        <br><br>
+        <div>
+            <label for="Role">User is Driver:</label>
+            <br>
+            <input type="checkbox" id="driverole" name="driverole" required/> 
+            <br>
+
+            <form action = "UpdateRoles.php">
+                <input type= "button" id = "button" value = "Update">
+            </form>
+
+        
+
+        </div>
+        <br><br>
+
+        <input type="submit" class="btn btn-warning" value="Update Role">
+
+        <br><br>
+    </form>
+
+    <div id = "ins">
+
     </div>
 
+            
+    <p>
+        <a href="../html/welcome.html" class="btn btn-danger">Return to Home Page</a>
+    </p>
     <p>
         <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </p>

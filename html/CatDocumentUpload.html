@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Documents</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../pictures/icons/CatIcon.png">
+    <style type="text/css">
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: table-cell;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        .wrapper{ 
+            width: 350px; 
+            padding: 20px; 
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Upload Documents</h2>
+       <br><br>
+        <form action = "../php/UploadFiles.php" method="POST" enctype="multipart/form-data">
+            
+            <div>
+                <label for="PetPoint ID">PetPoint ID:</label>
+                <input type="text" id="PetPoint ID" name="petpoint_id" />
+            </div>
+            <br><br>
+            <div>
+                <label for ="Picture">Picture:</label>
+                <input type="file" name="cat_doc_upload" accept="image/*"/>
+                <input type ="submit" name ="btn_upload" value="Upload">
+            </div>
+            
+            <br><br>
+
+            <div>
+                <label for ="PDF">PDF:</label>
+                <input id = "file" name="cat_pdf_upload" type="file" accept="pdf"/>
+                <input type ="submit" name ="btn_upload1" value="Upload">
+            </div>
+            <br><br>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-default" value="Reset">
+            </div>
+        </form>
+    
+        <div><label for="Error Reading"></label></div>
+    </div> 
+    
+
+
+    <p>
+        <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+    </p>   
+</body>
+</html>

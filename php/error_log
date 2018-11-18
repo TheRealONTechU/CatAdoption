@@ -1,0 +1,8 @@
+[17-Nov-2018 18:30:38 America/Montreal] PHP Warning:  mysqli_store_result() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 18:30:38 America/Montreal] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 19:07:17 America/Montreal] PHP Warning:  mysqli_store_result() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 19:07:17 America/Montreal] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 19:15:44 America/Montreal] PHP Warning:  mysqli_store_result() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 19:15:44 America/Montreal] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 19:16:58 America/Montreal] PHP Warning:  mysqli_store_result() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
+[17-Nov-2018 19:16:58 America/Montreal] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, string given in /home/rackite/tcrmanagement.racki.tech/php/UploadFiles.php on line 17
