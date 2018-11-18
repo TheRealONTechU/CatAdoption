@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../pictures/icons/CatIcon.png">
+</head>
+<body>
+    <div class="page-header">
+        <h1>Welcome to Employee Management System</h1>
+        <br><br>
+    </div>
+
+    <form method="POST" action="../php/makeDriver.php">
+        <div>
+            <label for="username">Enter Empoyee Username:</label>
+            <br>
+            <input type="text" id="username" name="username" required>
+            <br>
+        </div>
+        <br><br>
+        <div>
+            <label for="Role">User is Driver:</label>
+            <br>
+            <input type="checkbox" id="driverole" name="driverole" required/> 
+            <br>
+            <br>
+            <input type= "button" id = "button" value = "Update">
+        </div>
+        <br>
+    </form>
+
+    <div id = "ins">
+
+    </div>
+
+    <p>
+        <a href="../html/welcome.html" class="btn btn-danger">Return to Home Page</a>
+    </p>
+    <br>
+    <p>
+        <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+    </p>
+</body>
+</html>

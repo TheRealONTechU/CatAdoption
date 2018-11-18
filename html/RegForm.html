@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="expires" content="0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../pictures/icons/CatIcon.png">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+
+        html {
+            display: table;
+            margin: auto;
+        }
+
+        body { 
+            display: table-cell;
+        }
+
+        .wrapper{ 
+            width: 350px; 
+            padding: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Create Account</h2>
+        <p>Please fill this form to create an account.</p>
+
+        <form action="../php/RegForm.php" method="post">
+
+            <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
+                <input type="text" name = "firstName" class="form-control" placeholder="First name" ">
+                <span class="help-block"><?php echo $firstname_err; ?></span>
+            </div>    
+
+            <div class="form-group <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
+                <input type="text" name="lastName" class="form-control" placeholder="Last name" ">
+                <span class="help-block"><?php echo $lastname_err; ?></span>
+            </div>    
+           
+            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                <input type="text" name="username" class="form-control" placeholder="Username" ">
+                <span class="help-block"><?php echo $username_err; ?></span>
+            </div>    
+
+            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+                <input type="email" name="email" class="form-control" placeholder="Email" >
+                <span class="help-block"><?php echo $email_err; ?></span>
+            </div>    
+
+            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                <span class="help-block"><?php echo $password_err; ?></span>
+            </div>
+
+            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password">
+                <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+
+            <div class="form-group <?php echo (!empty($code_err)) ? 'has-error' : ''; ?>">
+                <label>Can you drive? <input type="checkbox" name="code" class="form-control" value="0"></label>
+                <span class="help-block"><?php echo $code_err; ?></span>
+            </div>    
+
+            <form action ="DeepValidation.php">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-default" value="Reset">
+        
+                <a href = "../html/welcome.html" ><input type = "btn btn-danger"  value = "Back to Home"></a>
+                  
+            }else{
+                <a href = "../html/WelcomeVolunteer.html"><input type = "button" class = "btn btn-danger" name = "Go back to Home" placeholder = "Home"></a>
+            }
+                
+            </form>
+
+         <p>
+            <a href="../php/logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        </p>
+
+        </form>
+    </div>    
+</body>
+</html>
