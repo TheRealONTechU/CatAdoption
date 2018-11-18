@@ -39,15 +39,22 @@
         <div>
             <label for="username">Enter Empoyee Username:</label>
             <br>
-            <input type="text" id="username" name="username">
+            <input type="text" id="username" name="username" required>
             <br>
         </div>
         <br><br>
         <div>
             <label for="Role">User is Driver:</label>
             <br>
-            <input type="checkbox" id="driverole" name="driverole" /> 
+            <input type="checkbox" id="driverole" name="driverole" required/> 
             <br>
+
+            <form action = "UpdateRoles.php">
+                <input type= "button" id = "button" value = "Update">
+            </form>
+
+        
+
         </div>
         <br><br>
 
