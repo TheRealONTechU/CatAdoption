@@ -15,7 +15,27 @@
         <h1>Welcome to Employee Management System</h1>
         <br><br>
     </div>
-    <form method="POST" action="../php/makeDriver.php"></form>
+
+    <script type="text/javascript">
+        function submit() {
+            var xmlHttp = new XMLHttpRequest();
+
+            var bool = document.getElementById('driverole').checked;
+            var usr = document.getElementById('username').innerHTML;
+
+            if(!bool) {
+                bool = false;
+            }
+            xmlHttp.open('GET','../php/makeDriver.php?driverole='+bool+'&user='+usr,true);
+            xmlHttp.send(null);
+            
+            var resp = '';
+            resp = xmlHttp.responseText;
+            document.getElementById('ins').innerHTML+=resp+"<br>";
+        }
+    </script>
+
+    <form method="POST" action="../php/makeDriver.php?"></form>
         <div>
             <label for="Username">Enter Empoyee Username:</label>
             <br>
@@ -30,9 +50,15 @@
             <br>
         </div>
         <br><br>
-        <a href="../php/makeDriver.php" class="btn btn-warning">Update Role</a>
+
+        <input type="submit" class="btn btn-warning" value="Update Role" onclick="submit()">
+
         <br><br>
     </form>
+
+    <div id = "ins">
+
+    </div>
 
     <p>
         
