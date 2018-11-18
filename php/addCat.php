@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          $errorMessage = true;
          break;
       } else {
-         array_push($qv, trim($_POST[querys[$i]])));
+         array_push($qv, trim($_POST[querys[$i]]));
       }
    }
 
