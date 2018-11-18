@@ -33,9 +33,15 @@ if($doc != '') {
         echo($filetype);
 
         $sqli = "INSERT INTO FILE (file_name, file_path, file_type, petpoint_id) VALUES ('$filename', '$path' , '$filetype', $petpointID)";
-        $result = mysqli_query($mysqli,MYSQLI_STORE_RESULT($sqli));
+        $result = MYSQLI_STORE_RESULT($mysqli,$sqli);
         
-        echo(`and the final uploaded`);
+        if($result != NULL) {
+            echo(`and the final uploaded`);
+        } else {
+            echo('err');
+        }
+
+        
     } else {
         echo(`couldnt uplopad :(`);
     }
